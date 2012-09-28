@@ -675,7 +675,7 @@
 				}
 			}
 			
-			$title.html(settings.title).add($loaded).show();
+			$title.html(settings.title).add($loaded).fadeIn(100);
 			
 			if (total > 1) { // handle grouping
 				if (typeof settings.current === "string") {
@@ -802,9 +802,10 @@
 		
 		href = settings.href;
 		
+		// changed timout from 100 to 1ms in order to fix Title content flash when loading next image
 		loadingTimer = setTimeout(function () {
 			$loadingOverlay.show().appendTo($content);
-		}, 100);
+		}, 1);
 		
 		if (settings.inline) {
 			// Inserts an empty placeholder where inline content is being pulled from.
